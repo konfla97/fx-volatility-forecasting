@@ -1,0 +1,61 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# =========================
+# Virtual environments
+# =========================
+.env
+.venv
+venv/
+ENV/
+env/
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Data (IMPORTANT)
+# =========================
+
+# Never commit raw data
+data/raw/
+
+# Allow processed data only
+!data/processed/
+
+# Ignore large binary leftovers
+*.zip
+*.tar.gz
+*.7z
+
+# =========================
+# Logs / temp
+# =========================
+*.log
+*.tmp
+
+# =========================
+# Model artifacts
+# =========================
+models/
+checkpoints/
