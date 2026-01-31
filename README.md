@@ -30,16 +30,17 @@ This is a practical setup relevant to:
 ### 1) Returns
 We compute 1-hour log returns:
 
-\[
+$$
 r_t = \log\left(\frac{P_t}{P_{t-1}}\right)
-\]
+$$
 
 ### 2) Target: Forward 24h Realized Volatility (Notebook 02)
 The prediction target at time *t* is the **forward-looking realized volatility** over the next **H = 24 hours**:
 
-\[
-RV_{t,24h} = \sqrt{24 \cdot \sum_{i=1}^{24} r_{t+i}^2}
-\]
+$$
+\mathrm{RV}_{t,24h}
+= \sqrt{24\cdot \sum_{i=1}^{24} r_{t+i}^2}
+$$
 
 This is implemented using a forward rolling window (shifted), so the target is **strictly out-of-sample** relative to features at time *t*.
 
@@ -68,15 +69,15 @@ These serve as strong baselines for structured features.
 
 EWMA updates conditional variance recursively:
 
-\[
+$$
 \sigma_t^2 = \lambda \sigma_{t-1}^2 + (1-\lambda) r_{t-1}^2
-\]
+$$
 
 Then the 24h volatility forecast is scaled:
 
-\[
+$$
 \hat{RV}_{t,24h} = \sqrt{24 \cdot \sigma_t^2}
-\]
+$$
 
 ### Nonlinear ML
 - **LightGBM** (gradient boosting)
@@ -180,7 +181,7 @@ This project was developed and tested using the following Python packages:
 
 You can install all dependencies with:
 
-```bash
+
 pip install -r requirements.txt
 
 ---
