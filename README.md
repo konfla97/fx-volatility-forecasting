@@ -37,9 +37,9 @@ $$
 ### 2) Target: Forward 24h Realized Volatility (Notebook 02)
 The prediction target at time *t* is the **forward-looking realized volatility** over the next **H = 24 hours**:
 
+
 $$
-\mathrm{RV}_{t,24h}
-= \sqrt{24\cdot \sum_{i=1}^{24} r_{t+i}^2}
+RV_{t,24h} = \sqrt{ \sum_{i=1}^{24} r_{t+i}^2 }
 $$
 
 This is implemented using a forward rolling window (shifted), so the target is **strictly out-of-sample** relative to features at time *t*.
